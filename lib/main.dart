@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_demo/auth/login_or_register_page.dart';
+import 'package:flutter_provider_demo/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -9,19 +15,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'River Pod PROJECT',
-      theme: ThemeData(
-      
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home:  const Scaffold(
-        body: Center(
-          child: Text('Flutter ooooo ooo Page')
-          )
-          ),
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:  const LoginOrRegister(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
-
