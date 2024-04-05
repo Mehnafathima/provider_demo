@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       home:  const Scaffold(
         body: Center(
-          child: Text('Flutter Demo ooo Page')
+          child: Text('Flutter ooooo ooo Page')
           )
           ),
     );
