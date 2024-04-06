@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_demo/components/custom_drawer_tile.dart';
+import 'package:flutter_provider_demo/pages/settings_page.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -27,16 +28,21 @@ class CustomDrawer extends StatelessWidget {
           ),
           CustomDrawerTile(text: "H O M E",
            icon: Icons.home,
-           onTap: (){},
+           onTap: () => Navigator.pop(context),
            ),
            CustomDrawerTile(text: "S E T T I N G S",
-           icon: Icons.home,
-           onTap: (){},
+           icon: Icons.settings,
+           onTap: (){
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage()));
+           },
            ),
+           const Spacer(),
            CustomDrawerTile(text: "L O G O U T",
            icon: Icons.logout,
            onTap: (){},
            ),
+           const SizedBox(height: 25,),
         ],
       ),
     );
