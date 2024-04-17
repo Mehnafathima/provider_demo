@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
                   title: Text('title'),
                   child: Column(
                     children: [
-                      Text("test nn"),
+                      Text("test "),
                       
                       ],
                   ),
